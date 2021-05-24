@@ -32,6 +32,7 @@ class App extends React.Component {
   }
 
   componentDidMount = () => {
+    // It would be even cooler if you used the browser location API to get the user's location and make a request for that...
     axios.get(`${process.env.REACT_APP_BACKEND_URL}/yelp`)
       .then(res => {
         this.setState({
@@ -71,6 +72,7 @@ class App extends React.Component {
   }
 
   getFavoriteBusiness = () => {
+    // very minor nitpick: you entery query params directly here but use separate params in getBusinessData
     axios.get(`${process.env.REACT_APP_BACKEND_URL}/business/profile?email=${this.props.auth0.user.email}`)
       .then(businessData => {
         console.log(businessData.data, 'working');

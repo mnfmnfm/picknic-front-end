@@ -10,7 +10,9 @@ class Main extends React.Component {
     return (
       <main>
         <Switch>
+          {/* No About Us page? :( */}
           <Route exact path="/">
+            {/* A bit odd to do the SearchBar and BusinessColumns as separate components, but it works */}
             <SearchBar
               handleOnChange={this.props.handleOnChange}
               handleSubmit={this.props.handleSubmit}
@@ -29,6 +31,7 @@ class Main extends React.Component {
               isAuthenticated={this.props.isAuthenticated}
             />
           </Route>
+          {/* This is a great way of making that path not even exist for non-auth users, great job */}
           {this.props.isAuthenticated ?
             <Route exact path="/profile">
               <Profile

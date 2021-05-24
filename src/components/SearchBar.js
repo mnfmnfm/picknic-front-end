@@ -8,6 +8,7 @@ class SearchBar extends React.Component {
         <Form onSubmit={this.props.handleSubmit}>
           <Row className="d-flex justify-content-center">
             <Col xs={5} className="pr-0">
+              {/* You should really have labels for your inputs, not just placeholders. */}
               <Form.Control required name="term" placeholder="Keyword" onChange={e => this.props.handleOnChange(e)} value={this.props.term} />
             </Col>
             <Col xs={5} className="pl-0 pr-0">
